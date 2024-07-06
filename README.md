@@ -2,7 +2,7 @@
 
 This project aims to answer "What would you like to eat today?"  or "What should I make today?" We tried to answer this question by creating RSE (Ready. Set. Eat). 
 
-<div align="center">
+<div align="center" style = "width = 200px">
 	<img src="assets/main.jpeg">
 </div>
 
