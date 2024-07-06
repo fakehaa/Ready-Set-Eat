@@ -1,0 +1,120 @@
+body {
+    font-family: sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("Images/bg.jpeg"); /* Add your image path here */
+    background-size: cover; /* Ensure the image covers the whole background */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    opacity: 0.7; /* Make the background image slightly transparent */
+    z-index: -1; /* Ensure the image is behind all content */
+}
+h1 {
+    margin-bottom: 20px;
+    font-size: 40px;
+    color:#D62828;
+    font-family: "Garamond", serif; /* Set font-family */
+}
+.subbody {
+    background-color: rgba(247, 127, 0, 0.7); /* Semi-transparent background */
+    margin: 20px;
+    padding: 20px;
+    height: calc(100vh - 80px);
+    border-radius: 50px;
+}
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#video-container {
+    position: relative;
+}
+#camera-feed {
+    border: 5px solid #EAE2B7;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 48, 73, 0.3);
+    max-width: 90%;
+    max-height: 90%;
+}
+.btn {
+    padding: 15px 30px;
+    border-radius: 20px;
+    font-weight: bold; /* Make the text bolder */
+    font-size: 20px;
+    cursor: pointer;
+    margin: 20px 10px; /* Combine margins */
+    transition: background-color 0.1s ease;
+}
+#capture-btn {
+    color: #EAE2B7;
+    padding: 10px 20px;
+    border: 2px solid #EAE2B7;
+    text-decoration: none;
+    background-color: transparent;
+    font-family: "Garamond", serif; /* Set font-family */
+}
+#capture-btn:hover {
+    color: #D62828;
+    background-color: #EAE2B7;
+}
+#retake-btn, #proceed-btn {
+    color: #FFF;
+    display: none;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+    text-decoration: none;
+    font-size: 1em;
+}
+#retake-btn {
+    background-color: transparent;
+    border: 2px solid #D62828;
+}
+#retake-btn:hover {
+    background-color: #B22C25;
+}
+#proceed-btn {
+    background-color: transparent;
+    border: 2px solid #0da837;
+}
+#proceed-btn:hover {
+    background-color: #036e20;
+}
+.loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+.loader {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #D62828;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 2s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

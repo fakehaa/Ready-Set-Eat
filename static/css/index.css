@@ -1,0 +1,46 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  background-color: #FCBF49; /* Set background color on body */
+}
+
+.container {
+  text-align: center; /* Center the buttons horizontally */
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 40px;
+  color: #003049;
+  font-family: "Garamond", serif; /* Set font-family */
+}
+
+.btn {
+  padding: 15px 30px;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold; /* Make the text bolder */
+  font-size: 20px;
+  cursor: pointer;
+  margin: 0 10px; /* Add margin between the buttons */
+}
+
+.order, .cook {
+  background-color: transparent; /* Remove background color */
+  color: #003049;
+  border: 2px solid #003049; /* Add border color */
+  transition: background-color 0.3s, color 0.3s; /* Add transition effect */
+  text-decoration: none;
+}
+
+.order:hover, .cook:hover {
+  background-color: #003049; /* Change background color on hover */
+  color: #FCBF49; /* Change text color on hover */
+}

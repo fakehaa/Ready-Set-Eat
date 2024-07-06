@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReadySetEat</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/predict.css') }}">
+</head>
+<body>
+    <div class="subbody">
+        <nav class="container">
+            <div class="navbar">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Recipes</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <header>
+            <div class="container">
+                <img class="image-display" src="{{ url_for('serve_image', filename=predicted_image.split('/')[-1]) }}" alt="Ingredients">
+                <h1>Oh wow! You have quite a lot of ingredients</h1>
+                <p>We spotted
+                    {% for class_name in class_names_detected %}
+                        {{ class_name }}{% if not loop.last %}, {% endif %}
+                    {% endfor %}!
+                </p>
+                <div class="button-container">
+                    <form action="{{ url_for('generate_recipes') }}" method="post">
+                        <input type="hidden" name="ingredients" value="{{ ','.join(class_names_detected) }}">
+                        <button type="submit" class="recipe-button">Look at the recipes we have recommended for you</button>
+                    </form>
+                </div>
+            </div>
+        </header>
+        <footer>
+            <div class="container">
+                <p>&copy; 2024 FoodRecommendation</p>
+            </div>
+        </footer>
+    </div>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/static/service-worker.js')
+                    .then(registration => {
+                        console.log('Service Worker registered with scope:', registration.scope);
+                    })
+                    .catch(error => {
+                        console.log('Service Worker registration failed:', error);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generated Recipes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/recipes.css') }}">
+</head>
+<body>
+    <div class="subbody">
+        <nav class="container">
+            <div class="navbar">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Recipes</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <header>
+            <div class="container">
+                <h1>Recipes for Your Ingredients</h1>
+            </div>
+        </header>
+        <div class="container">
+            {% for recipe in recipes %}
+            <div class="recipe">
+                <h2>{{ recipe.ingredients_text }}</h2>
+                <p>{{ recipe.instructions_text }}</p>
+            </div>
+            {% endfor %}
+        </div>
+        <footer>
+            <div class="container">
+                <p>&copy; 2024 FoodRecommendation</p>
+            </div>
+        </footer>
+    </div>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/static/service-worker.js')
+                    .then(registration => {
+                        console.log('Service Worker registered with scope:', registration.scope);
+                    })
+                    .catch(error => {
+                        console.log('Service Worker registration failed:', error);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>

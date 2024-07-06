@@ -1,0 +1,31 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "app.py",
+      "use": "@vercel/python",
+      "config": {
+        "runtime": "python3.10"
+      }
+    },
+    {
+      "src": "static/**",
+      "use": "@vercel/static-build"
+    }
+  ],
+  "routes": [
+    { "src": "/", "dest": "/app.py" },
+    { "src": "/video_feed", "dest": "/app.py" },
+    { "src": "/capture", "dest": "/app.py" },
+    { "src": "/predict", "dest": "/app.py" },
+    { "src": "/generate_recipes", "dest": "/app.py" },
+    { "src": "/detect", "dest": "/app.py" },
+    { "src": "/<filename>", "dest": "/app.py" },
+    { "src": "/static/(.*)", "dest": "/static/$1" }
+  ],
+  "env": {
+    "MODEL1_PATH": "./runs/detect/Model-Mix 1/train2/weights/best.pt",
+    "MODEL2_PATH": "./runs/detect/Model-Vegetables/train4/weights/best.pt",
+    "RECIPE_GEN_MODEL_PATH": "recipe_gen_model"
+  }
+}

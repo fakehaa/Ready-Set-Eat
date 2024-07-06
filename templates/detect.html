@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camera Capture</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/detect.css') }}">
+</head>
+<body>
+    <div class="subbody">
+        <h1>Camera Capture</h1>
+        <div id="container">
+            <div id="video-container">
+                <img id="camera-feed" src="{{ url_for('video_feed') }}">
+            </div>
+            <form method="POST" action="/capture">
+                <button id="capture-btn" class="btn" type="submit">Capture</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="loader-container" id="loader-container">
+        <div class="loader"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='jss/detect.js') }}"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/static/service-worker.js')
+                    .then(registration => {
+                        console.log('Service Worker registered with scope:', registration.scope);
+                    })
+                    .catch(error => {
+                        console.log('Service Worker registration failed:', error);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>
