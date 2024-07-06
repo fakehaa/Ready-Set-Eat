@@ -1,10 +1,10 @@
 # Ready Set Eat
 
-This project aims to answer "What would you like to eat today?"  or "What should I make today?" We tried to answer this question by creating RSE (Ready. Set. Eat). 
-
 <div align="center">
-	<img width = "200px" src="assets/main.jpeg">
+	<img width = "50%px" src="assets/main.jpeg">
 </div>
+
+This project aims to answer "What would you like to eat today?"  or "What should I make today?" We tried to answer this question by creating RSE (Ready. Set. Eat). 
 
 
 RSE works in a two-part project. 
