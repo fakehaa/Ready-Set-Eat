@@ -1,6 +1,6 @@
 # Ready Set Eat
 
-<div align="center">
+<div>
 	<img width = "50%" src="assets/main.jpeg">
 </div>
 
