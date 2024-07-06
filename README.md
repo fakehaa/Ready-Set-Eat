@@ -17,7 +17,7 @@ The first part is a Yolov8 🚀 based detection model. This detects all ingredie
 The second part runs on an Edamam API. This part takes the detected labels from the previous part and forms a list. This list will then retrieve recipes using these ingredients. We also created a web interface for the user to interact with (prototype UI). The retrieved recipes also return with the macros based on the user profile!
 
 <div>
-	<img width = "50%" src="assets/generate.jpeg">
+	<img width = "70%" src="assets/generate.jpeg">
 </div>
 
 
