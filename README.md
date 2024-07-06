@@ -1,7 +1,7 @@
 # Ready Set Eat
 
 <div align="center">
-	<img width = "50%px" src="assets/main.jpeg">
+	<img width = "50%" src="assets/main.jpeg">
 </div>
 
 This project aims to answer "What would you like to eat today?"  or "What should I make today?" We tried to answer this question by creating RSE (Ready. Set. Eat). 
@@ -10,14 +10,14 @@ This project aims to answer "What would you like to eat today?"  or "What should
 RSE works in a two-part project. 
 The first part is a Yolov8 🚀 based detection model. This detects all ingredients either raw or packaged, that exist in someone's pantry or fridge. 
 
-<div align="center">
-	<img width = "50%px" src="assets/yolo_detect.png">
+<div>
+	<img width = "50%" src="assets/yolo_detect.png">
 </div>
 
 The second part runs on an Edamam API. This part takes the detected labels from the previous part and forms a list. This list will then retrieve recipes using these ingredients. We also created a web interface for the user to interact with (prototype UI). The retrieved recipes also return with the macros based on the user profile!
 
-<div align="center">
-	<img width = "50%px" src="assets/generate.jpeg">
+<div>
+	<img width = "50%" src="assets/generate.jpeg">
 </div>
 
 
@@ -28,9 +28,10 @@ Below is our methodology and the flow of events when a user interacts with the s
 ![methodology](assets/method.jpeg)
 
 ## To run this repository 
-> Clone the repo
-> install dependencies through requirements.txt
-> run app.py
+1. Clone Repo
+2. Install Dependicies
+3. Run app.py 
+
 
 ------------
 This repository is for the final capstone project at The British University In Dubai
